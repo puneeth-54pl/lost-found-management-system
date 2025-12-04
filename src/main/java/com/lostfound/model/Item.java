@@ -14,10 +14,12 @@ public class Item implements Serializable {
 	private String itemType; // LOST or FOUND
 	private String itemName;
 	private String description;
-	private String category;
-	private String location;
+	private int categoryId;
+	private int locationId;
+	private String categoryName; // For display
+	private String locationName; // For display
 	private Date lostFoundDate;
-	private String status; // PENDING, APPROVED, REJECTED, RETURNED
+	private String status; // PENDING_APPROVAL, LISTED, RESOLVED, REJECTED
 	private String contactInfo;
 	private Timestamp createdAt;
 
@@ -27,15 +29,15 @@ public class Item implements Serializable {
 	public Item() {
 	}
 
-	public Item(int id, int userId, String itemType, String itemName, String description, String category,
-			String location, Date lostFoundDate, String status, String contactInfo, Timestamp createdAt) {
+	public Item(int id, int userId, String itemType, String itemName, String description, int categoryId,
+			int locationId, Date lostFoundDate, String status, String contactInfo, Timestamp createdAt) {
 		this.id = id;
 		this.userId = userId;
 		this.itemType = itemType;
 		this.itemName = itemName;
 		this.description = description;
-		this.category = category;
-		this.location = location;
+		this.categoryId = categoryId;
+		this.locationId = locationId;
 		this.lostFoundDate = lostFoundDate;
 		this.status = status;
 		this.contactInfo = contactInfo;
@@ -83,20 +85,36 @@ public class Item implements Serializable {
 		this.description = description;
 	}
 
-	public String getCategory() {
-		return category;
+	public int getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
-	public String getLocation() {
-		return location;
+	public int getLocationId() {
+		return locationId;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setLocationId(int locationId) {
+		this.locationId = locationId;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	public String getLocationName() {
+		return locationName;
+	}
+
+	public void setLocationName(String locationName) {
+		this.locationName = locationName;
 	}
 
 	public Date getLostFoundDate() {

@@ -20,21 +20,21 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="index.jsp"><i class="fas fa-search-location me-2"></i>Lost & Found</a>
+        <a class="navbar-brand" href="items"><i class="fas fa-search-location me-2"></i>Lost & Found</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp">Home</a>
+                    <a class="nav-link" href="items">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="items?action=search">Search Items</a>
                 </li>
                 <% if (currentUser != null) { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="post_item.jsp">Post Item</a>
+                        <a class="nav-link" href="items?action=form">Post Item</a>
                     </li>
                 <% } %>
             </ul>
@@ -53,9 +53,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <% if ("admin".equals(currentUser.getRole())) { %>
-                                <li><a class="dropdown-item" href="admin_dashboard.jsp">Admin Dashboard</a></li>
+                                <li><a class="dropdown-item" href="admin">Admin Dashboard</a></li>
+                                <li><a class="dropdown-item" href="claims?action=admin">Manage Claims</a></li>
                             <% } else { %>
                                 <li><a class="dropdown-item" href="dashboard.jsp">My Dashboard</a></li>
+                                <li><a class="dropdown-item" href="claims?action=my">My Claims</a></li>
                             <% } %>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="auth?action=logout">Logout</a></li>
