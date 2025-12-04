@@ -1,0 +1,40 @@
+/* Custom Styles */
+body {
+	background-color: #f8f9fa;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+	font-weight: bold;
+	color: #0d6efd !important;
+}
+
+.card {
+	border: none;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+}
+
+.status-badge {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.hero-section {
+	background: linear-gradient(135deg, #0d6efd 0%, #0099ff 100%);
+	color: white;
+	padding: 100px 0;
+	margin-bottom: 40px;
+}
+
+.footer {
+	background-color: #343a40;
+	color: white;
+	padding: 20px 0;
+	margin-top: 50px;
+}
