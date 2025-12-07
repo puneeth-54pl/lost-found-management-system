@@ -64,6 +64,13 @@
                             <span class="badge <%= statusClass %>"><%= item.getStatus() %></span>
                         </td>
                         <td>
+                            <% if ("LOST".equals(item.getItemType()) && ("LISTED".equals(item.getStatus()) || "PENDING_APPROVAL".equals(item.getStatus()))) { %>
+                            <form action="items" method="post" class="d-inline" onsubmit="return confirm('Are you sure you found your item? This will mark it as resolved.');">
+                                <input type="hidden" name="action" value="mark_found">
+                                <input type="hidden" name="item_id" value="<%= item.getId() %>">
+                                <button type="submit" class="btn btn-sm btn-success me-1" title="Mark as Found"><i class="fas fa-check"></i> Found</button>
+                            </form>
+                            <% } %>
                             <form action="items" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this item?');">
                                 <input type="hidden" name="action" value="delete">
                                 <input type="hidden" name="item_id" value="<%= item.getId() %>">

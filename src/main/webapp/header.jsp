@@ -30,7 +30,7 @@
                     <a class="nav-link" href="items">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="items?action=search">Search Items</a>
+                    <a class="nav-link" href="items?action=search"></a>
                 </li>
                 <% if (currentUser != null) { %>
                     <li class="nav-item">

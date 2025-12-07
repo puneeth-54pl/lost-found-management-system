@@ -13,8 +13,8 @@ import com.lostfound.util.DBConnection;
 public class ItemDAO {
 
     public int addItem(Item item) {
-        String sql = "INSERT INTO items (user_id, item_type, item_name, description, category_id, location_id, lost_found_date, status, contact_info) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try (Connection conn = DBConnection.getConnection(); 
+        String sql = "INSERT INTO items (user_id, item_type, item_name, description, category_id, location_id, lost_found_date, status, contact_info, image_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
             pstmt.setInt(1, item.getUserId());
@@ -26,6 +26,7 @@ public class ItemDAO {
             pstmt.setDate(7, item.getLostFoundDate());
             pstmt.setString(8, item.getStatus());
             pstmt.setString(9, item.getContactInfo());
+            pstmt.setString(10, item.getImageUrl());
 
             int rows = pstmt.executeUpdate();
             if (rows > 0) {
@@ -264,6 +265,7 @@ public class ItemDAO {
         item.setLostFoundDate(rs.getDate("lost_found_date"));
         item.setStatus(rs.getString("status"));
         item.setContactInfo(rs.getString("contact_info"));
+        item.setImageUrl(rs.getString("image_url"));
         item.setCreatedAt(rs.getTimestamp("created_at"));
         item.setUserName(rs.getString("username"));
         return item;

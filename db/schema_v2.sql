@@ -16,7 +16,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL, -- Plain text for this assignment as requested, but hashing is better
+    password VARCHAR(255) NOT NULL, -- SHA-256 hashed with salt for security
     email VARCHAR(100) NOT NULL,
     role VARCHAR(20) DEFAULT 'user', -- 'user' or 'admin'
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

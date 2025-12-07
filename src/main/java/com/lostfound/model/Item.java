@@ -21,6 +21,7 @@ public class Item implements Serializable {
 	private Date lostFoundDate;
 	private String status; // PENDING_APPROVAL, LISTED, RESOLVED, REJECTED
 	private String contactInfo;
+	private String imageUrl;
 	private Timestamp createdAt;
 
 	// Helper field for display
@@ -30,7 +31,7 @@ public class Item implements Serializable {
 	}
 
 	public Item(int id, int userId, String itemType, String itemName, String description, int categoryId,
-			int locationId, Date lostFoundDate, String status, String contactInfo, Timestamp createdAt) {
+			int locationId, Date lostFoundDate, String status, String contactInfo, String imageUrl, Timestamp createdAt) {
 		this.id = id;
 		this.userId = userId;
 		this.itemType = itemType;
@@ -41,6 +42,7 @@ public class Item implements Serializable {
 		this.lostFoundDate = lostFoundDate;
 		this.status = status;
 		this.contactInfo = contactInfo;
+		this.imageUrl = imageUrl;
 		this.createdAt = createdAt;
 	}
 
@@ -139,6 +141,14 @@ public class Item implements Serializable {
 
 	public void setContactInfo(String contactInfo) {
 		this.contactInfo = contactInfo;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 	public Timestamp getCreatedAt() {

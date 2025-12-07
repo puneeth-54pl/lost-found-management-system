@@ -20,7 +20,7 @@
                 <h4 class="mb-0">Post Lost or Found Item</h4>
             </div>
             <div class="card-body p-4">
-                <form action="items" method="post">
+                <form action="items" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="post">
                     
                     <div class="row mb-3">
@@ -51,6 +51,12 @@
                     <div class="mb-3">
                         <label class="form-label">Description</label>
                         <textarea class="form-control" name="description" rows="3" placeholder="Provide details like color, brand, distinct marks..." required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Item Image (Optional)</label>
+                        <input type="file" class="form-control" name="item_image" accept="image/*">
+                        <div class="form-text">Upload an image of the item (JPEG, PNG, GIF, WebP - Max 10MB)</div>
                     </div>
 
                     <div class="row mb-3">

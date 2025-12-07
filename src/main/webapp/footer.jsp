@@ -2,7 +2,7 @@
 
 <footer class="footer text-center">
     <div class="container">
-        <p class="mb-0">&copy; 2023 Lost & Found Management System. All rights reserved.</p>
+        <p class="mb-0">&copy; 2025 Lost & Found Management System. All rights reserved.</p>
     </div>
 </footer>
 

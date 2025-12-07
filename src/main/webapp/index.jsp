@@ -66,6 +66,9 @@
     %>
     <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
+            <% if (item.getImageUrl() != null && !item.getImageUrl().isEmpty()) { %>
+            <img src="<%= request.getContextPath() %>/<%= item.getImageUrl() %>" class="card-img-top" alt="<%= item.getItemName() %>" style="height: 200px; object-fit: cover;">
+            <% } %>
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-start mb-2">
                     <span class="badge <%= "LOST".equals(item.getItemType()) ? "bg-danger" : "bg-success" %>">
@@ -106,6 +109,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <% if (item.getImageUrl() != null && !item.getImageUrl().isEmpty()) { %>
+                    <div class="text-center mb-3">
+                        <img src="<%= request.getContextPath() %>/<%= item.getImageUrl() %>" class="img-fluid rounded" alt="<%= item.getItemName() %>" style="max-height: 300px;">
+                    </div>
+                    <% } %>
                     <p><strong>Description:</strong> <%= item.getDescription() %></p>
                     <p><strong>Category:</strong> <%= item.getCategoryName() %></p>
                     <p><strong>Location:</strong> <%= item.getLocationName() %></p>
