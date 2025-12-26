@@ -5,7 +5,11 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Item implements Serializable {
-    private int id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
     private int userId;
     private String itemType; // LOST or FOUND
     private String itemName;
@@ -15,6 +19,7 @@ public class Item implements Serializable {
     private Date lostFoundDate;
     private String status; // PENDING, APPROVED, REJECTED, RETURNED
     private String contactInfo;
+    private String imageUrl;
     private Timestamp createdAt;
     
     // Helper field for display
@@ -66,6 +71,9 @@ public class Item implements Serializable {
 
     public String getContactInfo() { return contactInfo; }
     public void setContactInfo(String contactInfo) { this.contactInfo = contactInfo; }
+
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 
     public Timestamp getCreatedAt() { return createdAt; }
     public void setCreatedAt(Timestamp createdAt) { this.createdAt = createdAt; }

@@ -1,7 +1,9 @@
 package com.lostfound.controller;
 
 import com.lostfound.dao.UserDAO;
+import com.lostfound.dao.UserDAO;
 import com.lostfound.model.User;
+import com.lostfound.util.PasswordUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +15,11 @@ import java.io.IOException;
 
 @WebServlet("/auth")
 public class AuthServlet extends HttpServlet {
-    private UserDAO userDAO;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private UserDAO userDAO;
 
     public void init() {
         userDAO = new UserDAO();
@@ -54,7 +60,7 @@ public class AuthServlet extends HttpServlet {
             return;
         }
 
-        User newUser = new User(username, password, email, "user");
+        User newUser = new User(username, PasswordUtil.hashPassword(password), email, "user");
         if (userDAO.registerUser(newUser)) {
             response.sendRedirect("login.jsp?success=Registration successful! Please login.");
         } else {
@@ -67,7 +73,7 @@ public class AuthServlet extends HttpServlet {
         String username = request.getParameter("username");
         String pass = request.getParameter("password");
 
-        User user = userDAO.checkLogin(username, pass);
+        User user = userDAO.checkLogin(username, PasswordUtil.hashPassword(pass));
 
         if (user != null) {
             HttpSession session = request.getSession();

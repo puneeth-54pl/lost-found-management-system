@@ -53,9 +53,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <% if ("admin".equals(currentUser.getRole())) { %>
-                                <li><a class="dropdown-item" href="admin_dashboard.jsp">Admin Dashboard</a></li>
+                                <li><a class="dropdown-item" href="admin">Admin Dashboard</a></li>
+                                <li><a class="dropdown-item" href="claims?action=admin">Manage Claims</a></li>
                             <% } else { %>
                                 <li><a class="dropdown-item" href="dashboard.jsp">My Dashboard</a></li>
+                                <li><a class="dropdown-item" href="claims?action=my">My Claims</a></li>
                             <% } %>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="auth?action=logout">Logout</a></li>

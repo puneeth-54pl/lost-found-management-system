@@ -51,7 +51,6 @@
                 </div>
                 <h6 class="card-subtitle mb-2 text-muted"><%= item.getCategory() %> | <i class="fas fa-map-marker-alt"></i> <%= item.getLocation() %></h6>
                 <p class="card-text"><%= item.getDescription() %></p>
-                <p class="mb-1"><strong>Contact:</strong> <%= item.getContactInfo() %></p>
                 <small class="text-muted">Posted by <%= item.getUserName() %> on <%= item.getLostFoundDate() %></small>
             </div>
         </div>

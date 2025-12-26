@@ -1,8 +1,7 @@
-</div> <!-- End Container -->
-
+ </div><!-- End Container -->
 <footer class="footer text-center">
     <div class="container">
-        <p class="mb-0">&copy; 2023 Lost & Found Management System. All rights reserved.</p>
+        <p class="mb-0">Lost & Found Management System</p>
     </div>
 </footer>
 

@@ -14,7 +14,12 @@
                 <h4 class="mb-0">Post Lost or Found Item</h4>
             </div>
             <div class="card-body p-4">
-                <form action="items" method="post">
+                <% if (request.getAttribute("error") != null) { %>
+                    <div class="alert alert-danger">
+                        <%= request.getAttribute("error") %>
+                    </div>
+                <% } %>
+                <form action="items" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="post">
                     
                     <div class="row mb-3">
@@ -46,6 +51,11 @@
                     <div class="mb-3">
                         <label class="form-label">Description</label>
                         <textarea class="form-control" name="description" rows="3" placeholder="Provide details like color, brand, distinct marks..." required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Upload Image (Optional)</label>
+                        <input type="file" class="form-control" name="imageFile" accept="image/*">
                     </div>
 
                     <div class="row mb-3">

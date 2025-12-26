@@ -49,8 +49,8 @@ CREATE TABLE items (
     image_url VARCHAR(255), -- Optional: for future use
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL,
-    FOREIGN KEY (location_id) REFERENCES locations(id) ON DELETE SET NULL
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
+    FOREIGN KEY (location_id) REFERENCES locations(id) ON DELETE CASCADE
 );
 
 -- 5. Matches Table (For potential matches between Lost and Found items)
@@ -80,9 +80,9 @@ CREATE TABLE claims (
 
 -- Users
 INSERT INTO users (username, password, email, role) VALUES 
-('admin', 'admin123', 'admin@lostfound.com', 'admin'),
-('john_doe', 'password123', 'john@example.com', 'user'),
-('jane_smith', 'password123', 'jane@example.com', 'user');
+('admin', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa82280d64d370d52', 'admin@lostfound.com', 'admin'),
+('john_doe', 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f', 'john@example.com', 'user'),
+('jane_smith', 'ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f', 'jane@example.com', 'user');
 
 -- Categories
 INSERT INTO categories (name) VALUES 

@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 public class User implements Serializable {
-    private int id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
     private String username;
     private String password;
     private String email;
