@@ -93,7 +93,7 @@ public class ClaimServlet extends HttpServlet {
             }
             
             // SECURITY CHECK 3: Only LISTED items can be claimed (not PENDING, REJECTED, or RESOLVED)
-            if (!"LISTED".equals(item.getStatus())) {
+            if (!"LISTED".equals(item.getStatus()) && !"APPROVED".equals(item.getStatus())) {
                 response.sendRedirect("items?error=" + java.net.URLEncoder.encode("This item is not available for claiming", "UTF-8"));
                 return;
             }

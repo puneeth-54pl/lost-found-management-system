@@ -34,7 +34,7 @@ public class AdminServlet extends HttpServlet {
         }
 
         String status = request.getParameter("status");
-        if (status == null) status = "PENDING_APPROVAL";
+        if (status == null) status = "PENDING";
 
         List<Item> items = itemDAO.getItemsByStatus(status);
         request.setAttribute("items", items);

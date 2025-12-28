@@ -17,9 +17,7 @@
         <h2>My Claims</h2>
         <p class="text-muted">Track the status of items you've claimed.</p>
     </div>
-    <div class="col-md-4 text-end">
-        <a href="items" class="btn btn-outline-secondary">Back to Items</a>
-    </div>
+
 </div>
 
 <div class="card shadow-sm">
